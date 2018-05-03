@@ -1,0 +1,11 @@
+﻿<html>
+    <head>
+        <title>User</title>
+    </head>
+    <body>
+        <h3>Welcome @Session["name"]</h3>
+        <img src="~/UploadedFiles/@Session["image"]" style="width:100px;height:100px" /><br />
+        <input type="button" value="Edit" />
+        <a href="/Home/index"><input type="button" value="Logout" /></a>
+    </body>
+</html>

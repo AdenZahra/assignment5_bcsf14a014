@@ -1,0 +1,70 @@
+﻿@model List<MvcApplication6.Models.user>
+<html>
+    <head>
+        <style>
+                table.dotted {
+                    /*border-style: solid;*/
+                    /*border: 1px;*/
+                    font-family: "Times New Roman", Times, serif;
+                    font-size: 18px;
+                }
+
+            </style>
+    </head>
+    <body>
+        <h1>Users</h1>
+        <table class="dotted" border="2">
+                <col width="100" >
+                <col width="80">
+                <col width="80">
+                <col width="180">
+                <col width="100">
+                
+    <tr>
+        <th>
+           User Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Login 
+        </th>
+        <th>
+            Address 
+        </th>
+        <th>
+            Age
+        </th>
+    
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+           @item.UserID
+        </td>
+        <td>
+            @item.Name
+        </td>
+        <td>
+           @item.Login
+        </td>
+        <td>
+           @item.Address
+        </td>
+        <td>
+           @item.Age
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit","Updateuser",  new { id=item.UserID }) 
+        </td>
+    </tr>
+}
+</table>
+        <a href="/Home/Index"><input type="button" value="Logout"/></a>
+
+    </body>
+</html>

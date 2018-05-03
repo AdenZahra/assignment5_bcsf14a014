@@ -1,0 +1,39 @@
+﻿<html>
+    <head>
+        <title>User</title>
+        
+    </head>
+    <body>
+        <h3 style="color:red; "> @TempData["registermsg"]</h3>
+
+        <form action="/Home/login" method="post" enctype="multipart/form-data">
+
+            Name:<input type="text" name="name" required value="@ViewBag.name@ViewBag.Uname"/><br />
+            Login:<input type="text" name="login" value="@ViewBag.login@ViewBag.Ulogin" required/><span style="color:red">@ViewBag.error</span><span style="color:red">@ViewBag.errorLogin</span><br />
+            Password:<input type="password" name="pswd" required/><span style="color:red">@ViewBag.erP</span><br />
+            Email:<input type="email" name="email" value="@ViewBag.email@ViewBag.Uemail" required/><span style="color:red">@ViewBag.errorEmail</span><span style="color:red">@ViewBag.errorE</span><br />
+            Gender:<select name="Gender"  >@ViewBag.gender
+                <option value="0">Male</option>
+                <option value="1">Female</option> 
+            </select><br />
+            
+            Address:<input name="address" value="@ViewBag.address@ViewBag.Uaddress" required/><br />
+            Age:<input type="text" name="age" value="@ViewBag.age@ViewBag.Uage" required/><span style="color:red">@ViewBag.errorAge</span><br />
+            CNIC:<input type="text" name="cnic" value="@ViewBag.cnic@ViewBag.Ucnic" required /><span style="color:red">@ViewBag.errorCNIC</span><br />
+            DOB<input type="date" name="dob" value="@ViewBag.dob@ViewBag.Udob" required/><br />
+            Sports:<br />
+            Cricket<input type="checkbox" value="1" name="cricket" />
+            Hockey<input type="checkbox" value="1" name="hockey" />
+            Chess<input type="checkbox" value="1" name="chess" /> <br />
+            Image:<input type="file" id="imgInp" name="image" /><br />
+            <img src="~/UploadedFiles/@ViewBag.Uimage" style="width:100px; height:100px" /><br />
+            
+            <input type="submit"  value="Create" />
+            <a href="/Home/index"><input type="button" value="Cancel" /></a>
+           
+
+        </form>
+
+
+    </body>
+</html>
